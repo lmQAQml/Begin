@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -22,10 +21,15 @@ public class MyWebConfig implements WebMvcConfigurer {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new InMemoryUserDetailsManager(User.withUsername("admin")
-                .password(getPasswordEncoder().encode("admin"))
-                .authorities("looking", "searching")
-                .build()
+        return new InMemoryUserDetailsManager(
+                User.withUsername("admin")
+                        .password(getPasswordEncoder().encode("admin"))
+                        .authorities("looking", "searching")
+                        .build(),
+                User.withUsername("visitor")
+                        .password(getPasswordEncoder().encode("visitor"))
+                        .authorities("looking")
+                        .build()
         );
     }
 }
