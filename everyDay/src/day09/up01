@@ -1,0 +1,25 @@
+面试题
+1.JDK与JRE区别
+    -- JDK是Java Develop ，开发所需环境，JRE中是Java相关包，JDK包括JRE。
+
+2.== 与equals的区别
+    -- 两个都可用于比较，==比较的是对象地址，equals比较两对象的值。
+
+3.两个对象的hashCode()相等，则equals()也一定为true？
+    -- 不一定相等，hashCode()代表对象所在哈希表中的存储位置，而equals()比较对象中的值。
+    hashCode()不重写会导致每个对象的hashCode()相等；
+    注意若equals()重写，hashCode()也必须重写；注：此处可举例解释。
+
+4.final在java的作用
+    -- final可修饰变量、方法
+    修饰变量时变量的值将不会改变
+    修饰方法时无法被继承，接口中定义变量时必须加上final修饰
+
+5.Math.round(-1.5)等于多少
+    -- 等于-2，减0.5再向上取整
+
+6.String属于基础数据类型吗
+    -- 不属于，基础数据类型有byte（1字节）、char（2字节）、int（4字节）、float（8字节）、long（8字节）
+    String为char的装箱类型
+
+7.String
