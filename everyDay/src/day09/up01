@@ -31,3 +31,10 @@
        StringBuilder和StringBuffer也是操作字符串的，在原基础上操作字符串，所以当字符串会经常改变时，不要使用String
        StringBuilder，线程不安全，适合单线程，性能比较高
        StringBuffer线程安全，适合多线程，
+
+8. String str="i"与 String str=new String("i")一样吗？
+    -- 不一样，因为内存的分配方式不一样。
+    String str="i"的方式，java 虚拟机会将其分配到常量池中；而 String str=new String("i") 则会被分到堆内存中。
+
+9. 如何将字符串反转？
+    -- 使用 StringBuilder 或者 stringBuffer 的 reverse() 方法。
