@@ -1,0 +1,15 @@
+1. 如何动态代理？
+    -- 接口,实现类,自己的handler，Proxy工具调用
+        实现invocationHandler中的invoke()方法，在此方法中进行需要的逻辑;  Object invoke = method.invoke(myClass, args); myClass为自定义的实现类
+        调用出使用proxy工具触发
+        InvocationHandler handler = new MyConfig<BaseClass>(myClass);
+        BaseClass myClassProxy = (BaseClass) Proxy.newProxyInstance(
+                                        BaseClass.class.getClassLoader(),
+                                        new Class<?>[]{BaseClass.class},
+                                        handler);
+
+2. 深拷贝和浅拷贝区别是什么？
+    -- 浅拷贝只是复制了对象的引用地址，两个对象指向同一个内存地址，所以修改其中任意的值，另一个值都会随之变化。
+        深拷贝是将对象及值复制过来，两个对象修改其中任意的值另一个值不会改变。
+
+
