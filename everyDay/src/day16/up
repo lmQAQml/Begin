@@ -1,0 +1,11 @@
+1. session 和 cookie 有什么区别？
+    --  Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中；
+        Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式。
+
+2. 说一下 session 的工作原理？
+    -- session是一个存在服务器上的类似于一个散列表格的文件。里面存有我们需要的信息，在我们需要用的时候可以从里面取出来。
+    类似于一个大号的map吧，里面的键存储的是用户的sessionid，用户向服务器发送请求的时候会带上这个sessionid。这时就可以从中取出对应的值了。
+
+3. 客户端禁止 cookie 能实现 session 还能用吗
+    -- 不能，因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，
+    禁用Cookie相当于失去了Session ID，也就得不到Session了。
