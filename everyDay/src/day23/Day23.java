@@ -25,8 +25,9 @@ public class Day23 {
             return new ArrayList<>();
         }
         List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(nums);
+        Arrays.sort(nums); // O(nlog n)
         int length = nums.length;
+        // o(n^2)
         for (int i = 0; i < length; i++) {
             if (nums[i] > 0) break;
             if (i > 0 && nums[i] == nums[i - 1]) continue;
