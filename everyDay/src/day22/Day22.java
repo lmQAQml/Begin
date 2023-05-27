@@ -1,10 +1,16 @@
 package src.day22;
 
 
+import java.util.Objects;
+
 public class Day22 {
 
     public static void main(String[] args) {
-        int[] ans = twoSum(new int[] {1,2,4,6,10}, 8);
+        int[] ans = twoSum(new int[] {1,2,4,6,10}, 1);
+        if (ans.length == 0) {
+            System.out.println("无法找到两数满足条件");
+            return;
+        }
         System.out.println("两个数的下标值");
         for (int an : ans) {
             System.out.println(an);
@@ -31,7 +37,7 @@ public class Day22 {
                 continue;
             }
             if (numbers[left] + numbers[right] > target) {
-                // 此时，两数相加小于目标值，左游标需右移
+                // 此时，两数相加大于目标值，右游标需左移
                 right -= 1;
                 continue;
             }
