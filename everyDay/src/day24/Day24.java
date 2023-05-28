@@ -25,7 +25,7 @@ public class Day24 {
             if (left <= right) {
 
                 // 窗口每次移动后，ret都可以增加 right - left + 1个子数组
-                ret += right - left + 1;
+                ret += (right - left + 1);
             }
         }
         return ret;

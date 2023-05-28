@@ -8,6 +8,10 @@ public class Day23 {
 
     public static void main(String[] args) {
         List<List<Integer>> res = threeSum(new int[] {-1,0,1,2,-1,-4});
+        if (res.isEmpty()) {
+            System.out.println("不存在");
+            return;
+        }
         System.out.println(res);
     }
 
