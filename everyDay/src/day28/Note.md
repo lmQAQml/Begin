@@ -3,7 +3,7 @@
     jdk1.8增加了stream特性，主要是基于fork-join框架构建，
     而且你可以通过parallel()与sequential()在并行流与顺序流之间进行切换。
 
-## 二、 Hashmap性能优化
+## 二 、 Hashmap性能优化
     1. 最重要的一点是底层结构不一样，1.7是数组 + 链表，1.8则是数组 + 链表 + 红黑树结构
     2. 插入键值对的put方法的区别，1.8中会将节点插入到链表尾部，而1.7中是采用头插
     3. jdk1.7中的hash函数对哈希值的计算直接使用key的hashCode值，
@@ -17,6 +17,26 @@
         2. 多种散列方式？
         3. 扩容 桶的含义以及红黑树如何转换？
 
-## 三 永久代移除，变成元空间 
+## 三 、永久代移除，变成元空间
+
     1.字符串存在永久代中，容易出现性能问题和内存溢出。 
     2.类及方法的信息等比较难确定其大小（比如动态加载类时），因此对于永久代的大小指定比较困难，太小容易出现永久代溢出，太大则容易导致老年代溢出
+
+## 四 、lambda表达式
+
+```java
+    // 用匿名内部类的方式来创建线程 
+    new Thread(new Runnable(){
+@Override
+public void run(){
+        System.out.println("hello world");
+        }
+        });
+
+
+        // 使用Lambda来创建线程
+        new Thread(()->System.out.println("hello world"));
+```
+
+## 五 并发：LongAdder 2. CompletableFuture 3. StampedLock
+    
