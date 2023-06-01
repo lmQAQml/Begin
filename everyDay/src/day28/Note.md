@@ -24,19 +24,30 @@
 
 ## 四 、lambda表达式
 
-```java
+    函数式接口，接口中只有一个方法
+
+```
     // 用匿名内部类的方式来创建线程 
     new Thread(new Runnable(){
-@Override
-public void run(){
-        System.out.println("hello world");
-        }
+        @Override
+            public void run(){
+                System.out.println("hello world");
+            }
         });
 
-
-        // 使用Lambda来创建线程
-        new Thread(()->System.out.println("hello world"));
+    // 使用Lambda来创建线程
+    new Thread(()->System.out.println("hello world"));
 ```
 
-## 五 并发：LongAdder 2. CompletableFuture 3. StampedLock
+## 五 并发：1. LongAdder 2. CompletableFuture 3. StampedLock
+
+    LongAdder(L————AtomicLong 的并发进化版)
+    相比较Atomiclong,相当于用空间来换时间，longAdder的基本思路就是分散热点,里面有几个核心要素，需要记住
+    Striped64抽象类，Striped64中定义了Cell内部类和各重要属性
+    cell类------当并发高时，拆分到多个cell进行计算
+    base-------基础值
+    顺便提一下Atomiclong的原理---AtomicLong的实现方式是内部有个value 变量，当多线程并发自增，自减时，主要是调用了Unsafe类的getAndAddLong方法，该方法是个native方法，它的逻辑是采用自旋的方式不断更新目标值，直到更新成功。----缺点就是在高并发的情况下，自旋的情况会明显变多，这样子CAS的性能就会大幅度下降了
+    AtomicLong,常见方法--addAndGet、decrementAndGet、compareAndSet，getAndIncrement()，incrementAndGet()
+
+
     
