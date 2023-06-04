@@ -47,3 +47,21 @@
         Runtime.totalMemory()方法总内存的字节数，
         Runtime.maxMemory() 返回最大内存的字节数。
 ```
+
+## 4、说一下 ArrayList 的优缺点
+
+```
+    ArrayList的优点如下：
+    
+        1、 ArrayList 底层以数组实现，是一种随机访问模式。ArrayList 实现了 RandomAccess 接口，因此查找的时候非常快。
+        
+        2、 ArrayList 在顺序添加一个元素的时候非常方便。
+    
+    ArrayList 的缺点如下：
+    
+        1、 删除元素的时候，需要做一次元素复制操作。如果要复制的元素很多，那么就会比较耗费性能。
+        
+        2、 插入元素的时候，也需要做一次元素复制操作，缺点同上。
+        
+        3、 ArrayList 比较适合顺序添加、随机访问的场景。
+```
