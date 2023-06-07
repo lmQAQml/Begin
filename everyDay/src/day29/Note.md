@@ -76,3 +76,17 @@
         一是两种对称性（输入和输出的对称性，字节和字符的对称性）；
         二是两种设计模式（适配器模式和装潢模式）。另外Java中的流不同于C#的是它只有一个维度一个方向。
 ```
+
+## 17、如果你提交任务时，线程池队列已满，这时会发生什么
+
+```
+    有俩种可能：
+    
+    1、 如果使用的是无界队列 LinkedBlockingQueue，也就是无界队列的话，没关系，继续添加任务到阻塞队列中等待执行，
+        因为 LinkedBlockingQueue 可以近乎认为是一个无穷大的队列，可以无限存放任务
+    
+    2、 如果使用的是有界队列比如 ArrayBlockingQueue，任务首先会被添加到ArrayBlockingQueue 中，ArrayBlockingQueue 满了，
+        会根据maximumPoolSize 的值增加线程数量，如果增加了线程数量还是处理不过来，ArrayBlockingQueue 继续满，
+        那么则会使用拒绝策略RejectedExecutionHandler 处理满了的任务，默认是 AbortPolicy
+
+```
