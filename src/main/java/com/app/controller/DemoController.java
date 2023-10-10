@@ -10,19 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class DemoController {
 
-    @ResponseBody
+
     @GetMapping("/test-demo")
     public DemoDto testDemo() {
         return new DemoDto(0, "demo");
     }
 
-    @ResponseBody
     @GetMapping("/looking/test")
     public DemoDto testLooking() {
         return new DemoDto(0, "look");
     }
 
-    @ResponseBody
     @GetMapping("/searching/test")
     public DemoDto testSearching() {
         return new DemoDto(0, "search");
