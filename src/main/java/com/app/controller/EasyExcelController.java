@@ -1,12 +1,15 @@
 package com.app.controller;
 
 import com.alibaba.excel.EasyExcel;
+import com.app.Listener.ExcelListener;
 import com.app.entity.ExcelEntity;
 import com.app.utils.ExcelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -34,8 +37,13 @@ public class EasyExcelController {
     }
 
     // 文件上传
-    @GetMapping("/upload")
-    public void upload() {
-
+    @PostMapping("/upload")
+    public String upload(MultipartFile file) throws IOException {
+        try {
+            EasyExcel.read(file.getInputStream(), ExcelEntity.class, new ExcelListener()).sheet("测试模板").doRead();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return "success";
     }
 }

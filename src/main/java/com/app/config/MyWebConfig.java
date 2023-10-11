@@ -9,6 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.jws.soap.SOAPBinding;
+
 @Configuration
 public class MyWebConfig implements WebMvcConfigurer {
 
@@ -29,6 +31,10 @@ public class MyWebConfig implements WebMvcConfigurer {
                 User.withUsername("visitor")
                         .password(getPasswordEncoder().encode("visitor"))
                         .authorities("looking")
+                        .build(),
+                User.withUsername("excel")
+                        .password(getPasswordEncoder().encode("excel"))
+                        .authorities("excel")
                         .build()
         );
     }

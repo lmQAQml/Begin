@@ -13,6 +13,7 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/test/looking/*").hasAnyAuthority("looking")
                 .antMatchers("/test/searching/*").hasAnyAuthority("searching")
+                .antMatchers("/excel/*").hasAnyAuthority("excel")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
