@@ -40,7 +40,8 @@ public class EasyExcelController {
     @PostMapping("/upload")
     public String upload(MultipartFile file) throws IOException {
         try {
-            EasyExcel.read(file.getInputStream(), ExcelEntity.class, new ExcelListener()).sheet("测试模板").doRead();
+            EasyExcel.read(file.getInputStream(), ExcelEntity.class, new ExcelListener()).sheet("测试模板")
+                    .headRowNumber(1).doRead();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
