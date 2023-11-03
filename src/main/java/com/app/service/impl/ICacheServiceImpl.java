@@ -83,10 +83,10 @@ public class ICacheServiceImpl implements ICacheService {
 
     public void doData(List<UserEntity> list) {
         for (UserEntity userEntity : list) {
-            String key = prefix + userEntity.getId();
-            if (key == null) {
+            if (userEntity.getId() == null) {
                 continue;
             }
+            String key = prefix + userEntity.getId();
             redisTemplate.opsForValue().set(key, userEntity, 60 * 60, TimeUnit.SECONDS);
         }
     }
