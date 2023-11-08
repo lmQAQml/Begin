@@ -78,6 +78,7 @@ public class ICacheServiceImpl implements ICacheService {
             }
             poolExecutor.execute(() -> doData(sonList));
         }
+        poolExecutor.shutdown();
 
     }
 
