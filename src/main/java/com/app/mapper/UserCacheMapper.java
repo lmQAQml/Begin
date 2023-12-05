@@ -2,6 +2,7 @@ package com.app.mapper;
 
 import com.app.entity.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,4 +20,7 @@ public interface UserCacheMapper {
      * @return
      */
     List<UserEntity> initUserCacheList();
+
+
+    List<UserEntity> findList(@Param("ids") List<Integer> ids);
 }
