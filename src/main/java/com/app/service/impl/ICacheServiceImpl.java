@@ -38,7 +38,7 @@ public class ICacheServiceImpl implements ICacheService {
         log.info("缓存开始加载时间:{}", System.currentTimeMillis());
         // 两种执行方式, 自行选择
 //        toFor(list);
-        toThreadPool(list);
+//        toThreadPool(list);
     }
 
     /**

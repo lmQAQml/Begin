@@ -1,4 +1,4 @@
-package src.day12;
+package day12;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadPoolExecutor;

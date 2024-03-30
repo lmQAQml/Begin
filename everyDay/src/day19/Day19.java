@@ -1,4 +1,4 @@
-package src.day19;
+package day19;
 
 import java.util.HashMap;
 import java.util.Objects;

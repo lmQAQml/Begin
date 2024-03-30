@@ -1,4 +1,4 @@
-package src.day21;
+package day21;
 
 import java.util.HashMap;
 

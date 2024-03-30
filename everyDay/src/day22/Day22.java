@@ -1,4 +1,4 @@
-package src.day22;
+package day22;
 
 
 import java.util.Objects;

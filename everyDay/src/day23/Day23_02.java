@@ -1,4 +1,4 @@
-package src.day23;
+package day23;
 
 public class Day23_02 {
 

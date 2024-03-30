@@ -1,4 +1,4 @@
-package src.day13;
+package day13;
 
 /**
  * 饿汉式

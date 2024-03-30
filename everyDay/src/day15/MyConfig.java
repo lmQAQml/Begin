@@ -1,4 +1,4 @@
-package src.day15;
+package day15;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

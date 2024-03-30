@@ -1,4 +1,4 @@
-package src.day15;
+package day15;
 
 public class MyClass implements BaseClass{
 
