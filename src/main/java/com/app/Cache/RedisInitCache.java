@@ -15,7 +15,6 @@ public class RedisInitCache implements ApplicationRunner {
     private ICacheService service;
 
     @Override
-    @Async
     public void run(ApplicationArguments args) throws Exception {
         // 加载User表缓存
         service.initUserCacheList();
