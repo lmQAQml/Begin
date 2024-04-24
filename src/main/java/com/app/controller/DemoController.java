@@ -11,9 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
 
+    /**
+     * 测试捕获异常处理
+     * @return
+     */
     @GetMapping("/test-demo")
     public DemoDto testDemo() {
-        return new DemoDto(0, "demo");
+        throw new RuntimeException();
+//        return new DemoDto(0, "demo");
     }
 
     @GetMapping("/looking/test")
