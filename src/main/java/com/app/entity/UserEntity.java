@@ -1,5 +1,6 @@
 package com.app.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.io.Serializable;
  * 用户
  */
 @Data
+@Builder
 public class UserEntity implements Serializable {
 
     private static long serialVersionUID = -64963065484587L;
