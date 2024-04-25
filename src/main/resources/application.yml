@@ -20,3 +20,11 @@ spring:
 
 mybatis-plus:
   mapper-locations: /mapper/*Mapper.xml
+
+
+thread:
+  pool:
+    corePoolSize: 5
+    maxPoolSize: 8
+    queueCapacity: 20
+    keepAliveSeconds: 30

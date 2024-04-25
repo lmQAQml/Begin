@@ -5,4 +5,6 @@ package com.app.service;
  */
 public interface DemoService {
 
+    void testAsync();
+
 }
