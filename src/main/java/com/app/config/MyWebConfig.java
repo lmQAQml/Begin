@@ -26,7 +26,7 @@ public class MyWebConfig implements WebMvcConfigurer {
         return new InMemoryUserDetailsManager(
                 User.withUsername("admin")
                         .password(getPasswordEncoder().encode("admin"))
-                        .authorities("looking", "searching")
+                        .authorities("looking", "searching", "excel")
                         .build(),
                 User.withUsername("visitor")
                         .password(getPasswordEncoder().encode("visitor"))

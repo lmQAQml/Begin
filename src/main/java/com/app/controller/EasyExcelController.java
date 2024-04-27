@@ -3,17 +3,14 @@ package com.app.controller;
 import com.alibaba.excel.EasyExcel;
 import com.app.Listener.ExcelListener;
 import com.app.entity.ExcelEntity;
+import com.app.annotation.ExcelAnnotation;
 import com.app.utils.ExcelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URLEncoder;
 
 @RestController
 @RequestMapping("/excel")
@@ -46,5 +43,12 @@ public class EasyExcelController {
             System.out.println(e.getMessage());
         }
         return "success";
+    }
+
+
+    @ExcelAnnotation
+    @GetMapping("/download1/{var}")
+    public void download1(HttpServletResponse response, @PathVariable("var") String var) {
+        System.out.println("入参: " + var);
     }
 }
