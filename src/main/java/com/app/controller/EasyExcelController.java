@@ -3,7 +3,7 @@ package com.app.controller;
 import com.alibaba.excel.EasyExcel;
 import com.app.Listener.ExcelListener;
 import com.app.entity.ExcelEntity;
-import com.app.annotation.ExcelAnnotation;
+import com.app.annotation.ExcelAopAnnotation;
 import com.app.utils.ExcelUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +46,7 @@ public class EasyExcelController {
     }
 
 
-    @ExcelAnnotation
+    @ExcelAopAnnotation
     @GetMapping("/download1/{var}")
     public void download1(HttpServletResponse response, @PathVariable("var") String var) {
         System.out.println("入参: " + var);

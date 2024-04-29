@@ -17,7 +17,7 @@ public class ExcelAopAdvise {
     // 1. 通过路径指定方法
 //    @Pointcut("execution(* com.app.controller.EasyExcelController.*(..))")
     // 2. 自定义注解方式指定方法
-    @Pointcut("@annotation(com.app.annotation.ExcelAnnotation)")
+    @Pointcut("@annotation(com.app.annotation.ExcelAopAnnotation)")
     public void pointcut() {
 
     }
