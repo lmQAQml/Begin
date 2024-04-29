@@ -80,15 +80,25 @@ public class RedisUtil {
 
     /**
      * 实现分布式锁
+     * 超时未获取则拒绝
      *
      * @param key
+     * @param value
      * @param expireTime
+     * @param getTimeOut
      * @return
      */
-    public Boolean setNX(String key, String value, long expireTime) {
-        // 锁不存在
+    public Boolean setNX(String key, String value, long expireTime, long getTimeOut) {
+        long currentTime = System.currentTimeMillis();
         if (redisTemplate.opsForValue().setIfAbsent(key, value, expireTime, TimeUnit.SECONDS)) {
             return true;
+        }
+        long time = System.currentTimeMillis() - currentTime - getTimeOut;
+        while(time < 0) {
+            if (redisTemplate.opsForValue().setIfAbsent(key, value, expireTime, TimeUnit.SECONDS)) {
+                return true;
+            }
+            time = System.currentTimeMillis() - getTimeOut;
         }
         return false;
     }
