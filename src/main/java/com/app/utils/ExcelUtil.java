@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class ExcelUtils {
+public class ExcelUtil {
 
     public List<ExcelEntity> getData() {
         ArrayList<ExcelEntity> list = new ArrayList<>();

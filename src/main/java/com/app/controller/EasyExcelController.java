@@ -4,7 +4,7 @@ import com.alibaba.excel.EasyExcel;
 import com.app.Listener.ExcelListener;
 import com.app.entity.ExcelEntity;
 import com.app.annotation.ExcelAopAnnotation;
-import com.app.utils.ExcelUtils;
+import com.app.utils.ExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +17,7 @@ import java.io.IOException;
 public class EasyExcelController {
 
     @Autowired
-    private ExcelUtils excelUtils;
+    private ExcelUtil excelUtils;
 
     // 文件下载
     @GetMapping("/download")
